@@ -1,12 +1,5 @@
 global main
 section .text
-main:
-	push rbp
-	mov rbp, rsp
-	mov rdi, 0xffffffffffffffff
-	call print_uint
-	leave
-	ret
 
 exit:
 	xor rax, rax
@@ -239,7 +232,3 @@ string_copy:
 		mov byte [rsi+r8], 0
 		mov rax, rdi
 		ret
-
-section .data
-word_buff times 20 db 0xca
-test_str db "0", 0
